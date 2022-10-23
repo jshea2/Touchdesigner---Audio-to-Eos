@@ -1,8 +1,23 @@
 # Touchdesigner - Audio to Eos
 
+[Download File](https://github.com/jshea2/Touchdesigner-Audio-to-Eos/releases/tag/v1.0])
+
 This Touchdesigner file processes incoming audio signal to trigger Eos channels in two seperate ways
-  - 1. Trigger 2 lighting channels by threshold. So when the audio is below a the threshold it's on first lighting channel, then when audio goes above the threshold it triggers the second one.
-  - 2. This takes the audio signal and converts the amplitude to a 0-100 value for the desired lighting channel.
+  - **Thresh** - Trigger two lighting channels by threshold. So when the audio is below a the threshold it's on first lighting channel, then when audio goes above the threshold it triggers the second one.
+  - **Intens** - This takes the audio signal and converts the amplitude to a 0-100 intensity value for the desired lighting channel.
+
+## Setup
+
+- **Patch Audio**
+    - In Touchdesigner by default the audio device is set to your computer's default audio device configuration. If you want to change this you can zoom into the UI operator and you'll see two nodes on the left "audiodevin1" and "audiodevin2". If you click on it and the properties don't show up, click "P", then adjust the "driver".
+- **Send commands to Eos**
+    - In Touchdesigner set the IP, Port In and Out to match Eos console. Find Eos IP by pressing "About" key (see below for ports).
+- **Send Cue Triggers to Touchdesigner**
+    - In Eos (Setup > System Settings > Show Control > OSC) Set the "OSC UDP TX IP ADDRESS" to the Touchdesigner computer's IP.
+    - Set "OSC CUE SEND STRING" to match Touchdesigner's "Eos Cue Send String". 
+        - Example: `/touch/`
+    - Pre and Post Cues are to turn the audio device off so you only have it trigger in the Active Cue, then until either the Post Cue is triggered. Pre isn't needed for the running of the show, but is helpful during Tech, so you don't have to manually turn it back off to re-trigger it
+    - If Eos "Goes to Cue Out" or "Cue 0". The audio device will also turn off.
 
 ## Example
 
