@@ -1,5 +1,8 @@
 # Touchdesigner - Audio to Eos
 
+
+<img width="626" alt="Screen Shot 2022-10-23 at 12 40 19 PM" src="https://user-images.githubusercontent.com/70780576/197414451-62f2f877-04b7-4c1a-9267-0c522d8f159d.png">
+
 [Download File](https://github.com/jshea2/Touchdesigner-Audio-to-Eos/releases/tag/v1.0])
 
 This Touchdesigner file processes incoming audio signal to trigger Eos channels in two seperate ways
